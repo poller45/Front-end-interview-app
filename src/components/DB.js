@@ -53,13 +53,218 @@ const QUESTIONS = [
 		url: "",
 		status: 0,
 	},
+	{
+		question: "What's the difference between host objects and native objects?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Explain the difference between: function Person(){}, var person = Person(), and var person = new Person()?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Explain the differences on the usage of foo between function foo() {} and var foo = function() {}",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Can you explain what Function.call and Function.apply do? What's the notable difference between the two?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Explain Function.prototype.bind.",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What's the difference between feature detection, feature inference, and using the UA string?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Explain hoisting.",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Describe event bubbling.",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Describe event capturing.",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What's the difference between an attribute and a property?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What are the pros and cons of extending built-in JavaScript objects?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is the difference between == and ===?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Explain the same-origin policy with regards to JavaScript.",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			'Why is it called a Ternary operator, what does the word "Ternary" indicate?',
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What is strict mode? What are some of the advantages/disadvantages of using it?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What tools and techniques do you use debugging JavaScript code?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Explain the difference between mutable and immutable objects.",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is an example of an immutable object in JavaScript?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What are the pros and cons of immutability?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "How can you achieve immutability in your own code?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Explain the difference between synchronous and asynchronous functions.",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is event loop?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is the difference between call stack and task queue?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What are the differences between variables created using let, var or const?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What are the differences between ES6 class and ES5 function constructors?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What advantage is there for using the arrow syntax for a method in a constructor?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is the definition of a higher-order function?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Can you give an example for destructuring an object or an array?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Can you give an example of generating a string with ES6 Template Literals?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Can you give an example of a curry function and why this syntax offers an advantage?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What are the benefits of using spread syntax and how is it different from rest syntax?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "How can you share code between files?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "Why you might want to create static class members?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"What is the difference between while and do-while loops in JavaScript?",
+		url: "",
+		status: 0,
+	},
+	{
+		question: "What is a promise? Where and how would you use promise?",
+		url: "",
+		status: 0,
+	},
+	{
+		question:
+			"Discuss how you might use Object Oriented Programming principles when coding with JavaScript.",
+		url: "",
+		status: 0,
+	},
 ];
-
-export { QUESTIONS };
-// localStorage.setItem(data, data);
-
-// if (localStorage.getItem('data')) {
-//     <List list={localStorage.getItem('data')} />
-// } else {
-//     <List list={data} />
-// }
+if (!localStorage.getItem("QUESTIONS")) {
+	localStorage.setItem("QUESTIONS", JSON.stringify(QUESTIONS));
+}
+//export default QUESTIONS;
+export default QUESTIONS ;
