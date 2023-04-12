@@ -2,11 +2,19 @@ import React, { useState, useEffect } from "react";
 import QUESTIONS from "./DB";
 
 import Radio from "@mui/material/Radio";
-import { Typography } from "@mui/material";
+
+import { Pagination, Typography } from "@mui/material";
 
 const QuestionList = () => {
 	const [questions, setQuestions] = useState(QUESTIONS);
+	const [currentPage, setCurrentPage] = useState(1);
 
+	const itemsPerPage = 50;
+	const pageCount = Math.ceil(questions.length / itemsPerPage);
+	const displayedQuestions = questions.slice(
+		(currentPage - 1) * itemsPerPage,
+		currentPage * itemsPerPage
+	);
 	useEffect(() => {
 		const savedQuestions = JSON.parse(localStorage.getItem("questions"));
 		if (savedQuestions) {
@@ -33,20 +41,25 @@ const QuestionList = () => {
 				return "not-started";
 		}
 	};
+
+	const handlePageChange = (event, value) => {
+		setCurrentPage(value);
+	};
+
 	return (
-		<div>
-			<Typography variant="h1" component="h2">
+		<div className="container">
+			<Typography variant="h3" component="h3" className="title">
 				Front end interview question
 			</Typography>
-			{questions.map((question, index) => (
-				<div className={`${getQuestionClassName(question.status)}`} key={index}>
+			{displayedQuestions.map((question, index) => (
+				<div key={index}>
 					<Typography
 						variant="h5"
 						className={`${getQuestionClassName(question.status)}`}
 					>
-						{index + 1}.{question.question}
+						{question.question}
 					</Typography>
-					<div>
+					<div className="radio-container">
 						<Radio
 							type="radio"
 							value="0"
@@ -86,6 +99,12 @@ const QuestionList = () => {
 					)}
 				</div>
 			))}
+			<Pagination
+				count={pageCount}
+				page={currentPage}
+				onChange={handlePageChange}
+				color="primary"
+			/>
 		</div>
 	);
 };

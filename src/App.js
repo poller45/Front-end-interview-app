@@ -1,5 +1,5 @@
-//import Question from "./components/Question";
 import QuestionList from "./components/QuestionList";
+import "./components/styles.css";
 
 function App() {
 	return <QuestionList />;
